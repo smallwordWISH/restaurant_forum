@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <td><%= label_tag 'Name' %></td>
+    <td><%= @restaurant.name %></td>
+  </tr>
+  <tr>
+    <td><%= label_tag 'Tel'%></td>
+    <td><%= @restaurant.tel %></td>
+  </tr>
+    <tr>
+    <td><%= label_tag 'Address'%></td>
+    <td><%= @restaurant.address %></td>
+  </tr>
+  </tr>
+    <tr>
+    <td><%= label_tag 'Opening_hours'%></td>
+    <td><%= @restaurant.opening_hours%></td>
+  </tr>
+  <tr>
+    <td><%= label_tag 'description'%></td>
+    <td><%= @restaurant.description%></td>
+  </tr>
+</table>
+
+<%= link_to 'back to index' ,admin_restaurants_path %>
+
