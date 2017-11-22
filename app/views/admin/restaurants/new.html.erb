@@ -1,0 +1,22 @@
+
+<%= form_for [:admin, @restaurant] do |f| %>
+
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name %>
+  <% if @restaurant.errors[:name].present? %>
+    <span style="color: red" >name<%=" #{@restaurant.errors[:name].join}"%></span>
+  <% end%>
+  <%= f.label :tel, 'Tel' %>
+  <%= f.text_field :tel %>
+
+  <%= f.label :address, 'Adress' %>
+  <%= f.text_field :address %>
+
+  <%= f.label :opening_hours, 'Opening hours' %>
+  <%= f.text_field :opening_hours %>
+
+  <%= f.label :description, 'Description' %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+<% end %>
