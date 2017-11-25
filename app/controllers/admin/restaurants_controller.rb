@@ -16,21 +16,21 @@ class Admin::RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
+      flash[:notice] = "restaurant was successfully created"
       redirect_to admin_restaurants_path
-      flash[:notice] = "restaurant was successfully created" 
     else
+      flash.now[:alert] = "restaurant was failed to create"
       render :new
-      flash[:alert] = "restaurant was failed to create"
     end
   end
 
   def update
     if @restaurant.update(restaurant_params)
-      redirect_to admin_restaurant_path(@restaurant)
       flash[:notice] = "restaurant has been successfully updated"
+      redirect_to admin_restaurant_path(@restaurant)    
     else
-      render :edit
       flash[:alert] = "restaurant was failed to update"
+      render :edit
     end    
   end
 
