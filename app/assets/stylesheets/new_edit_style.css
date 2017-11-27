@@ -1,0 +1,11 @@
+#the-form {
+  margin-top: 25px;
+}
+
+#form-submit {
+  float: right;
+}
+
+textarea {
+  resize: none;
+}

@@ -1,0 +1,11 @@
+#show-tabel> tbody >tr >td {
+  vertical-align: middle;
+}
+
+#table-submit {
+  float: right;
+}
+
+#show-tabel {
+  margin-top: 25px;
+}

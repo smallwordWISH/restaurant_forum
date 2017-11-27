@@ -1,0 +1,11 @@
+a.btn.glyphicon> .glyphicon-plus, .glyphicon-pencil, .glyphicon-trash {
+  color: black;
+}
+
+a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-trash:hover {
+  color: #CE0000;
+}
+
+#paginate {
+  text-align: center
+}

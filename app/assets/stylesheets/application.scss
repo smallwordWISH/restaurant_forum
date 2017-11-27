@@ -14,4 +14,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
- @import "style";
+ @import "common";
+ @import "index_style";
+ @import "new_edit_style";
+ @import "show_style";
+

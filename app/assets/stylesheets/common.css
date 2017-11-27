@@ -1,0 +1,34 @@
+.navbar-inverse {
+  opacity: 0.9;
+}
+
+.navbar-inverse .navbar-btn {
+  color: #fff;
+  text-align: left;
+
+}
+
+.menu > li> a.btn.navbar-btn {
+    color: #C0C0C0;
+}
+
+.menu > li> a.btn.navbar-btn:hover {
+    color: #fff;
+}
+
+.menu > li {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: center;
+  float: right;
+}
+
+#content {
+  margin-top: 50px;
+}
+
+#new-restaurant-btn{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
