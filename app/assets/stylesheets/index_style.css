@@ -1,5 +1,12 @@
+#new-restaurant-btn{
+  margin-top: 10px;
+  margin-right: 10px;
+  vertical-align: center;
+}
+
 a.btn.glyphicon> .glyphicon-plus, .glyphicon-pencil, .glyphicon-trash {
   color: black;
+  
 }
 
 a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-trash:hover {
@@ -9,3 +16,8 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 #paginate {
   text-align: center
 }
+
+.notice {
+  margin-top: 10px;
+}
+

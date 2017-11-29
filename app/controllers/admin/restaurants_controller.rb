@@ -36,7 +36,15 @@ class Admin::RestaurantsController < ApplicationController
 
   def destroy
     @restaurant.destroy
-    redirect_to admin_restaurants_path
+    redirect_to_back_or_default
+  end
+
+  def redirect_to_back_or_default
+    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+      redirect_to request.referer, :notice => "#{@restaurant.name} was successfully deleted."
+    else
+      redirect_to admin_restaurants_path, :notice => "#{@restaurant.name} was successfully deleted."
+    end
   end
 
 
