@@ -27,6 +27,10 @@
           <% end%>
         </div>
         <div class="form-group">
+          <%= f.label :category, 'Category' %>
+          <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "請選擇分類" }, {class: "form-control"} %>
+        </div>
+        <div class="form-group">
           <%= f.label :tel, 'Tel' %>
           <%= f.text_field :tel, class: "form-control" %>
         </div>
