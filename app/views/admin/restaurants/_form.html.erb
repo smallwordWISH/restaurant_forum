@@ -23,7 +23,7 @@
           <%= f.label :name, 'Name' %>
           <%= f.text_field :name, class: "form-control", maxlength: 10%>
           <% if @restaurant.errors[:name].present? %>
-            <span style="color: red" >name<%=" #{@restaurant.errors[:name].join}"%></span>
+            <span style="color: red" ><%= @restaurant.errors.full_messages.to_sentence %></span>
           <% end%>
         </div>
         <div class="form-group">
