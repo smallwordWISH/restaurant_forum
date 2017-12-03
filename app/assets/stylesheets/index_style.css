@@ -21,6 +21,6 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   margin-top: 10px;
 }
 
-#restaurant-table > tbody > tr > td {
+#restaurant-table > tbody > tr > td, #category-table > tbody > tr > td {
   text-align: center;
 }
