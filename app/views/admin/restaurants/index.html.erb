@@ -18,6 +18,10 @@
       <% if flash[:notice] %>
         <div class="notice alert alert-success col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"><%= flash[:notice] %></div>
       <% end %>
+      <div>
+        <%= link_to 'Restaurant', admin_restaurants_path %>
+        <%= link_to 'Category', admin_categories_path %>       
+      </div>
       <div id="new-restaurant-btn" class="pull-right">
         <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
       </div>

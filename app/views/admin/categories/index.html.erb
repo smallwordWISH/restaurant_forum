@@ -1,0 +1,45 @@
+<div id="my-nav" class="navbar navbar-inverse navbar-fixed-top navbar-collapse">
+  <div class="container container-fluid col-xs-12 col-sm-12  col-md-offset-2 col-md-9 col-lg-offset-2 col-lg-8">
+    <div id="nav-title">
+      <%= link_to '餐廳評論網', root_path, class: "btn navbar-btn col-xs-5 col-sm-5 col-md-3 col-lg-3"%>
+    </div>
+    <ul class="menu">
+      <li>
+        <%= link_to '管理者後台', admin_restaurants_path, class: "btn navbar-btn" %>
+        <%= link_to '登出', destroy_user_session_path, class: "pull-right btn navbar-btn", method: :delete if user_signed_in?  %>
+        <%= link_to '登入', user_session_path, class: "pull-right btn navbar-btn" if !user_signed_in? %>           
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="content">
+  <div class="container container-fluid col-xs-12 col-sm-12 col-md-offset-2 col-md-9 col-lg-offset-2 col-lg-8">
+    <div class="all-category">
+      <% if flash[:notice] %>
+        <div class="notice alert alert-success col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"><%= flash[:notice] %></div>
+      <% end %>
+    <div>
+      <%= link_to 'Restaurant', admin_restaurants_path %>
+      <%= link_to 'Category', admin_categories_path %>       
+    </div>
+    <table id="category-table" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th colspan="2">Method</th>
+        </tr>
+      </thead>
+      <% @categories.each do |category| %>
+        <tr>
+          <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <%= category.id %>
+          </td>
+          <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            [<%= category.name %>] 
+          </td>
+        </tr>
+      <% end %>
+    </table>      
+  </div>
+</div>
