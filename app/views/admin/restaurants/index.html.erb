@@ -15,16 +15,18 @@
 <div id="content">
   <div class="container container-fluid col-xs-12 col-sm-12 col-md-offset-2 col-md-9 col-lg-offset-2 col-lg-8">
     <div class="all-restaurant">
+      <div class="row">
+      <ol class="breadcrumb pull-left col-xs-7 col-sm-3 col-md-3 col-lg-3">
+        <li><%= link_to 'Restaurant', admin_restaurants_path %></li>
+        <li><%= link_to 'Category', admin_categories_path %></li>       
+      </ol>
       <% if flash[:notice] %>
-        <div class="notice alert alert-success col-xs-10 col-sm-offset-1 col-sm-10 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6"><%= flash[:notice] %></div>
+        <div class="notice alert alert-success col-xs-12 col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1 col-lg-6"><%= flash[:notice] %></div>
       <% end %>
-      <div>
-        <%= link_to 'Restaurant', admin_restaurants_path %>
-        <%= link_to 'Category', admin_categories_path %>       
-      </div>
-      <div id="new-restaurant-btn" class="pull-right">
+      <div class="new-btn pull-right col-xs-2 ol-sm-1 col-md-1 col-lg-1">
         <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
       </div>
+    </div>
       <table id="restaurant-table" class="table table-hover table-condensed">
         <thead>
           <tr>
@@ -53,10 +55,10 @@
             </td>
           </tr>
         <% end %>
-      </table>      
-    </div>
-    <div id="paginate">
-      <%= paginate @restaurants,  window: 2 %>
+      </table> 
+      <div id="paginate" >
+        <%= paginate @restaurants,  window: 2%>
+      </div>     
     </div>
   </div>
 </div>

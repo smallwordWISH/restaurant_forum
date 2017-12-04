@@ -31,5 +31,23 @@ th {
   text-align: center;
 }
 
+.breadcrumb {
+  margin: 10px 0 5px 0;
+  background-color: #fff;
+  text-align: center;
+}
 
+.new-btn {
+  margin-top: 10px;
+  display: inline-block;
+}
 
+.form-group {
+  vertical-align: middle;
+}
+
+.notice, .alert {
+  padding: 5px;
+  text-align: center;
+  margin: 5px;
+}
