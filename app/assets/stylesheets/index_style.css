@@ -1,7 +1,6 @@
 #new-restaurant-btn{
   margin-top: 10px;
   margin-right: 10px;
-  vertical-align: center;
 }
 
 a.btn.glyphicon> .glyphicon-plus, .glyphicon-pencil, .glyphicon-trash {
@@ -23,5 +22,17 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 
 #restaurant-table > tbody > tr > td, #category-table > tbody > tr > td {
   text-align: center;
+}
+
+.breadcrumb {
+  margin: 10px 0 5px 0;
+  background-color: #fff;
+  text-align: left;
+}
+
+/* category */
+
+#new_category {
+  margin-right: 10px;
 }
 

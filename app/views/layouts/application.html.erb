@@ -10,6 +10,40 @@
   </head>
 
   <body>
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-collapse">
+      <div class="container container-fluid col-xs-12 col-sm-12  col-md-offset-1 col-md-11 col-lg-offset-2 col-lg-8">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-nav" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a id="nav-title" class="navbar-brand" href="/">餐廳評論網</a>
+        </div>
+      <div id="my-nav" class="collapse navbar-collapse">     
+        <ul id="menu">
+          <li>
+            <% if current_user %>
+              <p class="navbar-text" style="color: #C0C0C0; text-align: right">Hi, <%= current_user.email %>&nbsp;&nbsp;</p>
+              <%= link_to '管理者後台', admin_restaurants_path, class: "btn navbar-btn" if current_user.admin?   %>
+              <% if user_signed_in? %> 
+                <%= link_to '登出', destroy_user_session_path, class: " btn navbar-btn", method: :delete %>
+                <span style="color: #C0C0C0">|</span>
+                <%= link_to '修改密碼', edit_user_password_path, class: "btn navbar-btn pull-right" %>
+              <%else%>
+                <%= link_to '登入', user_session_path, class: "btn navbar-btn"  %>
+                <span style="color: #C0C0C0">|</span>
+                <%= link_to '註冊', new_user_registration_path, class: "pull-right btn navbar-btn" %>
+              <% end %>
+            <% end %>           
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+      </div>
     <%= yield %>
   </body>
 </html>
