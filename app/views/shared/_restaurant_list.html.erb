@@ -1,0 +1,20 @@
+<div class="all-restaurant">
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+    <div class="col-xs-6 col-sm-4  col-md-4  col-lg-4">
+      <div class="restaurant-item">
+        <%= image_tag restaurant.image, class:"restaurant-image image-responsive center-block"%>
+        <div class="caption">
+          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+          <p class="label label-default"><%= restaurant.category.name%></p>
+          <p style="margin-top: 10px"><%= truncate(restaurant.description, length: 80) %></p>
+        </div>
+      </div>
+      </div> 
+    <% end %>
+
+  </div>
+  <div id="paginate" >
+    <%= paginate @restaurants,  window: 2%>
+  </div>
+</div> 
