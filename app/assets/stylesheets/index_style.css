@@ -58,3 +58,13 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 .restaurant-item .caption {
   padding: 0 10px;
 }
+
+.nav-pills-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.nav-pills-center > li {
+   float: none;
+   display: inline-block;
+}
