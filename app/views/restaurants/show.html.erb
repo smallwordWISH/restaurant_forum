@@ -35,6 +35,18 @@
       </div>
     </div>
   </div>
+  <div class="container comment-all col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
+    <% @restaurant.comments.each do |comment| %>
+    <div>
+      <% username = comment.user.email.split('@') %>
+      <h4><%= username[0] %></h4>
+      <p><%= simple_format comment.content %></p>
+      <p class="text-muted">
+        <em><%= time_ago_in_words(comment.created_at) + ' ago' %></em>
+      </p>
+    </div>
+    <% end %>
+  </div>
   <div class="container comment-form col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
     <%= form_for [@restaurant, @comment] do |f| %>
       <div class="form-group">
