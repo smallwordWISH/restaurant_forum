@@ -39,9 +39,9 @@ class Admin::RestaurantsController < Admin::BaseController
 
   def redirect_to_back_or_default
     if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-      redirect_to request.referer, :notice => "#{@restaurant.name} was successfully deleted."
+      redirect_to request.referer, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
     else
-      redirect_to admin_restaurants_path, :notice => "#{@restaurant.name} was successfully deleted."
+      redirect_to admin_restaurants_path, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
     end
   end
 
