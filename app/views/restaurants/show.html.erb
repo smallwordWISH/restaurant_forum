@@ -37,6 +37,7 @@
   </div>
   <div class="container comment-all col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
     <% @restaurant.comments.each do |comment| %>
+    <hr />
     <div>
       <% username = comment.user.email.split('@') %>
       <h4><%= username[0] %></h4>
