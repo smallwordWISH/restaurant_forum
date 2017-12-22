@@ -17,7 +17,7 @@
     <div class="form-group">
       <%= f.label :avatar, '上傳大頭貼' %>
       <%= image_tag @user.avatar, width: '300px' if @user.avatar? %>
-      <%= f.file_field :z %>
+      <%= f.file_field :avatar %>
     </div>
     <div id="form-submit">
       <%= link_to 'Cancel', user_path(@user), class: "btn btn-danger" %>
