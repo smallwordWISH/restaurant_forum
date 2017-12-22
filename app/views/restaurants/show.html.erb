@@ -37,8 +37,7 @@
 <% @restaurant.comments.each do |comment| %>
 <hr />
 <div>
-  <% username = comment.user.name %>
-  <h4><%= username[0] %></h4>
+  <h4><%= comment.user.name %></h4>
   <p><%= simple_format comment.content %></p>
   <p class="text-muted">
     <em>

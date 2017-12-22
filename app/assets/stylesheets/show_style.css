@@ -1,9 +1,13 @@
+#show-tabel {
+  margin-top: 10px;
+}
 #show-tabel> tbody >tr >td {
   vertical-align: middle;
 }
 
 #table-submit {
   float: right;
+  margin-bottom: 25px;
 }
 
 .show-item {
@@ -67,6 +71,7 @@
   padding-top: 100%;
   position: relative;
 }
+
 #user-item .user-imgbox img {
   width: 100%;
   height: 100%;
@@ -76,5 +81,37 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
 
+/*user show commented restaurant*/
+
+.my-restaurant {
+  margin-bottom: 10px;
+  text-overflow: ellipsis;
+}
+
+.my-restaurant-imgbox {
+  padding: 4px;
+  overflow: hidden;
+}
+
+.my-restaurant-imgbox-inner {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.my-restaurant .my-restaurant-imgbox img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.my-restaurant-name {
+  margin-top: 2px;
 }
