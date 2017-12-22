@@ -1,7 +1,15 @@
-<ul class="nav nav-pills nav-pills-center">
-  <li role="presentation" class="active"><%= link_to '全部餐廳', restaurants_path %></li>
-  <% @categories.each do |category| %>
-    <li role="presentation"><%= link_to category.name, category_path(category) %></li>
-  <% end %>
-</ul>
+<% if flash[:notice] %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="notice alert alert-success col-md-6 "><%= flash[:notice] %></div>
+  </div>
+<% end %>
+<div>
+  <ul class="nav nav-pills nav-pills-center">
+    <li role="presentation" class="active"><%= link_to '全部餐廳', restaurants_path %></li>
+    <% @categories.each do |category| %>
+      <li role="presentation"><%= link_to category.name, category_path(category) %></li>
+    <% end %>
+  </ul>
+</div>
 <%= render partial: "shared/restaurant_list" %>
