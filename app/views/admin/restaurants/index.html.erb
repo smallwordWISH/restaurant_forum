@@ -1,14 +1,14 @@
 <div id="content">
-  <div class="container container-fluid col-xs-12 col-sm-12 col-md-offset-2 col-md-9 col-lg-offset-2 col-lg-8">
+  <div class="container container-fluid col-md-offset-2 col-md-8">
     <div class="row">
-      <ol class="breadcrumb pull-left col-xs-7 col-sm-3 col-md-3 col-lg-3">
+      <ol class="breadcrumb pull-left col-xs-7 col-sm-3">
         <li><%= link_to 'Restaurant', admin_restaurants_path %></li>
         <li><%= link_to 'Category', admin_categories_path %></li>       
       </ol>
       <% if flash[:notice] %>
-        <div class="notice alert alert-success col-xs-12 col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1 col-lg-6"><%= flash[:notice] %></div>
+        <div class="notice alert alert-success col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1"><%= flash[:notice] %></div>
       <% end %>
-      <div class="new-btn pull-right col-xs-2 ol-sm-1 col-md-1 col-lg-1">
+      <div class="new-btn pull-right col-xs-2 ol-sm-1">
         <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
       </div>
     </div>
@@ -24,19 +24,19 @@
         <div class="row">
         <% @restaurants.each do |restaurant| %>
           <tr>
-            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <td class="col-xs-1">
               <%= restaurant.id %>
             </td>
-            <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <td class="col-xs-3">
               [<%= restaurant.category.name %>] 
             </td>
-            <td class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <td class="col-xs-6">
               <%= link_to "#{restaurant.name}", admin_restaurant_path(restaurant), class: "btn" %>
             </td>
-            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+            <td class="col-xs-1">
                <%= link_to '', edit_admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-pencil"%>
             </td>
-            <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+            <td class="col-xs-1">
                <%= link_to '', admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-trash", method: :delete, data: {confirm: "Are you sure?" } %>
             </td>
           </tr>

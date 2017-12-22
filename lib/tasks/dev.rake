@@ -22,9 +22,15 @@ namespace :dev do
   end
 
   task fake_user: :environment do
+    User.destroy_all
+
+    User.create!(name:"admin", email: "admin@example.com", password: "password", role: "admin")
+    User.create!(name:"guest", email: "guest@email.com", password: "password" ) 
+
     20.times do |i|
         user_name = FFaker::Name.first_name
         User.create!(
+            name: user_name, 
             email: "#{user_name}@email.com",
             password: "password"
         )
@@ -32,11 +38,13 @@ namespace :dev do
 
     puts "have created fake user"
     puts "now you have #{User.count} user data"
+    puts "Default admin created! ( email: admin@example.com, password: password )"
+    puts "Default user created! ( email: guest@email.com, password: password )"
 
   end
 
   task fake_comment: :environment do
-    Comment.all.destroy
+    Comment.destroy_all
 
     Restaurant.all.each do |restaurant|
         3.times do |i|

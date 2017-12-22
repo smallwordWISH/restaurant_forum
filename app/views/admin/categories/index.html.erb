@@ -1,13 +1,13 @@
 <div id="content">
-  <div class="container container-fluid col-xs-12 col-sm-12 col-md-offset-2 col-md-9 col-lg-offset-2 col-lg-8">
+  <div class="container container-fluid col-md-offset-2 col-md-8">
     <div class="all-category">
       <div class="row">
-      <ol class="breadcrumb pull-left col-xs-7 col-sm-3 col-md-3 col-lg-3">
+      <ol class="breadcrumb pull-left col-xs-7 col-sm-3">
         <li><%= link_to 'Restaurant', admin_restaurants_path %></li>
         <li><%= link_to 'Category', admin_categories_path %></li>       
       </ol>
       <% if flash[:notice] %>
-        <div class="notice alert alert-success alert-dismissible col-xs-12 col-sm-6  col-md-4  col-lg-4"><%= flash[:notice] %></div>
+        <div class="notice alert alert-success alert-dismissible col-sm-6  col-md-4 "><%= flash[:notice] %></div>
       <% end %>
       <div class="new-btn form-inline pull-right">
         <%= form_for [:admin, @category] do |f| %>
@@ -31,16 +31,16 @@
       </thead>
       <% @categories.each do |category| %>
         <tr>
-          <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <td class="col-xs-1">
             <%= category.id %>
           </td>
-          <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <td class="col-xs-3">
             [<%= category.name %>] 
           </td>
-          <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <td class="col-xs-1">
              <%= link_to '', admin_categories_path(id: category.id), class: "btn glyphicon glyphicon-pencil"%>
           </td>
-          <td class="col-xs-1 col-sm-1 col-md-1 col-lg-1 ">
+          <td class="col-xs-1">
             <%= link_to '', admin_category_path(category), class: "btn glyphicon glyphicon-trash", method: :delete, data: {confirm: "Are you sure?" } %>
           </td>
         </tr>

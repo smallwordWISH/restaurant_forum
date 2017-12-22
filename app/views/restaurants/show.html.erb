@@ -1,5 +1,5 @@
 <div id="content">
-  <div class="container container-fluid col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
+  <div class="container container-fluid col-md-offset-2 col-md-8">
     <div class="show-header">
       <h1><%= @restaurant.name %></h1>
       <p class="label label-default"><%= @restaurant.category.name %></p>
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="container comment-all col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
+  <div class="container comment-all col-md-offset-2 col-md-8">
     <% @restaurant.comments.each do |comment| %>
     <hr />
     <div>
@@ -54,7 +54,7 @@
     </div>
     <% end %>
   </div>
-  <div class="container comment-form col-xs-12 col-md-offset-2 col-md-9 col-lg-8">
+  <div class="container comment-form col-md-offset-2 col-md-8">
     <%= form_for [@restaurant, @comment] do |f| %>
       <div class="form-group">
         <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
