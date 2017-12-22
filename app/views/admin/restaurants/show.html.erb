@@ -1,42 +1,37 @@
-<div id="content">
-  <div class="container container-fluid col-md-offset-2 col-md-8">
-    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-      <table id="show-tabel" class="table table-striped">
-        <tr>
-          <td colspan="2"><%= image_tag @restaurant.image, width: "100%" %></td>
-        </tr>
-        <tr>
-          <td><%= label_tag 'Category' %></td>
-          <td><%= @restaurant.category.name %></td>
-        </tr>
-        <tr>
-          <td><%= label_tag 'Name' %></td>
-          <td><%= @restaurant.name %></td>
-        </tr>
-        <tr>
-          <td><%= label_tag 'Tel'%></td>
-          <td><%= @restaurant.tel %></td>
-        </tr>
-          <tr>
-          <td><%= label_tag 'Address'%></td>
-          <td><%= @restaurant.address %></td>
-        </tr>
-        </tr>
-          <tr>
-          <td><%= label_tag 'Opening_hours'%></td>
-          <td><%= @restaurant.opening_hours%></td>
-        </tr>
-        <tr>
-          <td><%= label_tag 'description'%></td>
-          <td><%= @restaurant.description%></td>
-        </tr>
-      </table>
-      <div id="table-submit">
-        <%= link_to 'Back', admin_restaurants_path, class: "btn btn-danger" %>
-        <%= link_to 'Edit', edit_admin_restaurant_path, class: "btn btn-primary" %>
-      </div>
-
-    </div>
+<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+  <table id="show-tabel" class="table table-striped">
+    <tr>
+      <td colspan="2"><%= image_tag @restaurant.image, width: "100%" %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Category' %></td>
+      <td><%= @restaurant.category.name %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Name' %></td>
+      <td><%= @restaurant.name %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'Tel'%></td>
+      <td><%= @restaurant.tel %></td>
+    </tr>
+      <tr>
+      <td><%= label_tag 'Address'%></td>
+      <td><%= @restaurant.address %></td>
+    </tr>
+    </tr>
+      <tr>
+      <td><%= label_tag 'Opening_hours'%></td>
+      <td><%= @restaurant.opening_hours%></td>
+    </tr>
+    <tr>
+      <td><%= label_tag 'description'%></td>
+      <td><%= @restaurant.description%></td>
+    </tr>
+  </table>
+  <div id="table-submit">
+    <%= link_to 'Back', admin_restaurants_path, class: "btn btn-danger" %>
+    <%= link_to 'Edit', edit_admin_restaurant_path, class: "btn btn-primary" %>
   </div>
-</div>  
+</div>
 

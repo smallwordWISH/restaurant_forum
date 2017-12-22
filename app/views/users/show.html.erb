@@ -1,25 +1,21 @@
-<div id="content">
-  <div class="container container-fluid col-md-offset-2 col-md-8">
-    <% if flash[:notice] %>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="notice alert alert-success col-md-8">
-          <%= flash[:notice] %>  
-        </div>
-      </div>
-    <% end %>
-    <div id="user-item">
-      <div class="user-imgbox col-md-4 col-md-offset-1">
-        <div class="user-imgbox-inner">
-          <%= image_tag @user.avatar, class:"image-responsive center-block" %>
-        </div>
-      </div>
-      <div class="user-info col-md-7">
-        <h3><%= @user.name %></h3>
-        <p><%= @user.email %></p>
-        <p class="user-intro"><%= @user.intro %></p>
-        <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
-      </div>
+<% if flash[:notice] %>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="notice alert alert-success col-md-8">
+      <%= flash[:notice] %>  
     </div>
+  </div>
+<% end %>
+<div id="user-item">
+  <div class="user-imgbox col-md-4 col-md-offset-1">
+    <div class="user-imgbox-inner">
+      <%= image_tag @user.avatar, class:"image-responsive center-block" %>
+    </div>
+  </div>
+  <div class="user-info col-md-7">
+    <h3><%= @user.name %></h3>
+    <p><%= @user.email %></p>
+    <p class="user-intro"><%= @user.intro %></p>
+    <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
   </div>
 </div>

@@ -33,7 +33,7 @@
                 <span style="color: #C0C0C0">|</span>
                 <%= link_to 'Profile', user_path(current_user), class: " btn navbar-btn" %>
                 <span style="color: #C0C0C0">|</span>
-                <%= link_to '修改密碼', edit_user_password_path, class: "btn navbar-btn pull-right" %>
+                <%= link_to '修改密碼', edit_user_registration_path(current_user), class: "btn navbar-btn pull-right" %>
               <%else%>
                 <%= link_to '登入', user_session_path, class: "btn navbar-btn"  %>
                 <span style="color: #C0C0C0">|</span>
@@ -45,6 +45,10 @@
       </div>
     </div>
     </div>
+    <div id="content">
+      <div class="container container-fluid col-md-offset-2 col-md-8">
     <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

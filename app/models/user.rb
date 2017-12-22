@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
   has_many :comments
 
-  mount_uploader :avatar, AvatarUploader
-
   validates_presence_of :name
+
+  mount_uploader :avatar, AvatarUploader
   
   def admin?
     self.role == "admin"

@@ -1,11 +1,7 @@
-<div id="content">
-  <div class="container container-fluid col-md-offset-2 col-md-8">
-    <ul class="nav nav-pills nav-pills-center">
-      <li role="presentation"><%= link_to '全部餐廳', restaurants_path %></li>
-      <% @categories.each do |category| %>
-        <li role="presentation" class="<%="active" if category == @category %>"><%= link_to category.name, category_path(category) %></li>
-      <% end %>
-    </ul>
-    <%= render partial: "shared/restaurant_list" %>
-  </div>
-</div>
+<ul class="nav nav-pills nav-pills-center">
+  <li role="presentation"><%= link_to '全部餐廳', restaurants_path %></li>
+  <% @categories.each do |category| %>
+    <li role="presentation" class="<%="active" if category == @category %>"><%= link_to category.name, category_path(category) %></li>
+  <% end %>
+</ul>
+<%= render partial: "shared/restaurant_list" %>

@@ -1,52 +1,49 @@
-<div id="content">
-  <div class="container container-fluid col-md-offset-2 col-md-8">
-    <div class="row">
-      <ol class="breadcrumb pull-left col-xs-7 col-sm-3">
-        <li><%= link_to 'Restaurant', admin_restaurants_path %></li>
-        <li><%= link_to 'Category', admin_categories_path %></li>       
-      </ol>
-      <% if flash[:notice] %>
-        <div class="notice alert alert-success col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1"><%= flash[:notice] %></div>
-      <% end %>
-      <div class="new-btn pull-right col-xs-2 ol-sm-1">
-        <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
-      </div>
-    </div>
-      <table id="restaurant-table" class="table table-hover table-condensed">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Catrgory</th>
-            <th>Name</th>
-            <th colspan="2">Method</th>
-          </tr>
-        </thead>
-        <div class="row">
-        <% @restaurants.each do |restaurant| %>
-          <tr>
-            <td class="col-xs-1">
-              <%= restaurant.id %>
-            </td>
-            <td class="col-xs-3">
-              [<%= restaurant.category.name %>] 
-            </td>
-            <td class="col-xs-6">
-              <%= link_to "#{restaurant.name}", admin_restaurant_path(restaurant), class: "btn" %>
-            </td>
-            <td class="col-xs-1">
-               <%= link_to '', edit_admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-pencil"%>
-            </td>
-            <td class="col-xs-1">
-               <%= link_to '', admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-trash", method: :delete, data: {confirm: "Are you sure?" } %>
-            </td>
-          </tr>
-        <% end %>
-        </div>
-      </table> 
-      <div id="paginate" >
-        <%= paginate @restaurants,  window: 2%>
-      </div>     
+<div class="row">
+  <ol class="breadcrumb pull-left col-xs-7 col-sm-3">
+    <li><%= link_to 'Restaurant', admin_restaurants_path %></li>
+    <li><%= link_to 'Category', admin_categories_path %></li>       
+  </ol>
+  <% if flash[:notice] %>
+    <div class="notice alert alert-success col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1"><%= flash[:notice] %></div>
+  <% end %>
+  <div class="new-btn pull-right col-xs-2 ol-sm-1">
+    <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
   </div>
 </div>
+  <table id="restaurant-table" class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Catrgory</th>
+        <th>Name</th>
+        <th colspan="2">Method</th>
+      </tr>
+    </thead>
+    <div class="row">
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td class="col-xs-1">
+          <%= restaurant.id %>
+        </td>
+        <td class="col-xs-3">
+          [<%= restaurant.category.name %>] 
+        </td>
+        <td class="col-xs-6">
+          <%= link_to "#{restaurant.name}", admin_restaurant_path(restaurant), class: "btn" %>
+        </td>
+        <td class="col-xs-1">
+           <%= link_to '', edit_admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-pencil"%>
+        </td>
+        <td class="col-xs-1">
+           <%= link_to '', admin_restaurant_path(restaurant), class: "btn glyphicon glyphicon-trash", method: :delete, data: {confirm: "Are you sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+    </div>
+  </table> 
+  <div id="paginate" >
+    <%= paginate @restaurants,  window: 2%>
+  </div>     
+
 
 

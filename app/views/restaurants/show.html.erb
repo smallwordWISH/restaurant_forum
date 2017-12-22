@@ -1,68 +1,65 @@
-<div id="content">
-  <div class="container container-fluid col-md-offset-2 col-md-8">
-    <div class="show-header">
-      <h1><%= @restaurant.name %></h1>
-      <p class="label label-default"><%= @restaurant.category.name %></p>
-    </div>
-    <div class="show-item row">
-      <div class="col-xs-12 col-md-6">
-        <div class="restaurant-imgbox">
-          <div class="imgbox-inner">
-            <%= image_tag @restaurant.image, width: "100%", class:"image-responsive center-block"%>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <table id="show-tabel" class="table table-striped">
-          <tr>
-            <td><%= label_tag 'Tel'%></td>
-            <td><%= @restaurant.tel %></td>
-          </tr>
-            <tr>
-            <td><%= label_tag 'Address'%></td>
-            <td><%= @restaurant.address %></td>
-          </tr>
-          </tr>
-            <tr>
-            <td><%= label_tag 'Opening_hours'%></td>
-            <td><%= @restaurant.opening_hours%></td>
-          </tr>
-          <tr>
-            <td><%= label_tag 'description'%></td>
-            <td><%= @restaurant.description%></td>
-          </tr>
-        </table>
+<div class="show-header">
+  <h1><%= @restaurant.name %></h1>
+  <p class="label label-default"><%= @restaurant.category.name %></p>
+</div>
+<div class="show-item row">
+  <div class="col-xs-12 col-md-6">
+    <div class="restaurant-imgbox">
+      <div class="imgbox-inner">
+        <%= image_tag @restaurant.image, width: "100%", class:"image-responsive center-block"%>
       </div>
     </div>
   </div>
-  <div class="container comment-all col-md-offset-2 col-md-8">
-    <% @restaurant.comments.each do |comment| %>
-    <hr />
-    <div>
-      <% username = comment.user.email.split('@') %>
-      <h4><%= username[0] %></h4>
-      <p><%= simple_format comment.content %></p>
-      <p class="text-muted">
-        <em>
-          <%= time_ago_in_words(comment.created_at) + ' ago' %>
-          <% if current_user.admin? %>
-            <%= "-" %> 
-            <%= link_to 'Delete', restaurant_comment_path(@restaurant, comment), method: :delete, data: { confirm: "Are you sure?"}%>
-          <% end %>
-        </em>
-      </p>
-    </div>
-    <% end %>
+  <div class="col-xs-12 col-md-6">
+    <table id="show-tabel" class="table table-striped">
+      <tr>
+        <td><%= label_tag 'Tel'%></td>
+        <td><%= @restaurant.tel %></td>
+      </tr>
+        <tr>
+        <td><%= label_tag 'Address'%></td>
+        <td><%= @restaurant.address %></td>
+      </tr>
+      </tr>
+        <tr>
+        <td><%= label_tag 'Opening_hours'%></td>
+        <td><%= @restaurant.opening_hours%></td>
+      </tr>
+      <tr>
+        <td><%= label_tag 'description'%></td>
+        <td><%= @restaurant.description%></td>
+      </tr>
+    </table>
   </div>
-  <div class="container comment-form col-md-offset-2 col-md-8">
-    <%= form_for [@restaurant, @comment] do |f| %>
-      <div class="form-group">
-        <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.submit class: "btn btn-primary" %>
-        <%= f.button 'Reset', type: :reset, class: "btn btn-danger" %>
-      </div>
-    <% end %>
+</div>
+</div>
+<div class="container comment-all col-md-offset-2 col-md-8">
+<% @restaurant.comments.each do |comment| %>
+<hr />
+<div>
+  <% username = comment.user.name %>
+  <h4><%= username[0] %></h4>
+  <p><%= simple_format comment.content %></p>
+  <p class="text-muted">
+    <em>
+      <%= time_ago_in_words(comment.created_at) + ' ago' %>
+      <% if current_user.admin? %>
+        <%= "-" %> 
+        <%= link_to 'Delete', restaurant_comment_path(@restaurant, comment), method: :delete, data: { confirm: "Are you sure?"}%>
+      <% end %>
+    </em>
+  </p>
+</div>
+<% end %>
+</div>
+<div class="container comment-form col-md-offset-2 col-md-8">
+<%= form_for [@restaurant, @comment] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, placeholder: "留個言吧", class: "form-control" %>
   </div>
-</div>  
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+    <%= f.button 'Reset', type: :reset, class: "btn btn-danger" %>
+  </div>
+<% end %>
+
