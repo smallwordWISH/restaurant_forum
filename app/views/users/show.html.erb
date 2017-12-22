@@ -6,12 +6,12 @@
 <% end %>
 <div id="user-item">
   <div class="row">
-    <div class="user-imgbox col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-1">
+    <div class="user-imgbox col-xs-10 col-xs-offset-1 col-md-4 ">
       <div class="user-imgbox-inner">
         <%= image_tag @user.avatar, class:"image-responsive center-block" %>
       </div>
     </div>
-    <div class="user-info col-xs-10 col-xs-offset-1 col-md-7">
+    <div class="user-info col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
       <h3><%= @user.name %></h3>
       <p><%= @user.email %></p>
       <p class="user-intro"><%= @user.intro %></p>
