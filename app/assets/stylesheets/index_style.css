@@ -77,6 +77,13 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 
 .restaurant-item .caption {
   padding: 0 10px;
+}
+
+.restaurant-item .caption .heart-btn {
+  float: right;
+  margin-top: 5px;
+  text-decoration: none;
+  color: red; 
   
 }
 

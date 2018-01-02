@@ -10,8 +10,9 @@
           </div>
         </div>
         <div class="caption">
-          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-          <p class="label label-default"><%= restaurant.category.name%></p>
+          <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
+          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>                  
+          <p class="label label-default"><%= restaurant.category.name%></p>   
           <p class="restaurant-discription"><%= truncate(restaurant.description, length: 80) %></p>
         </div>
       </div>

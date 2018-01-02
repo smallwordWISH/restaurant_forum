@@ -1,9 +1,8 @@
 <div class="show-header">
   <h1><%= @restaurant.name %></h1>
   <p class="label label-default"><%= @restaurant.category.name %></p>
-  <%= link_to '',favorite_restaurant_path(@restaurant), method: :post, class: "btn glyphicon glyphicon-heart" %>
-  <%= link_to '',unfavorite_restaurant_path(@restaurant), method: :post, class: "btn glyphicon glyphicon-heart" %>
-  <%= link_to 'Dashboard', dashboard_restaurant_path(@restaurant), class: "btn btn-info dashboard-btn"  %>
+  <%= link_to '', dashboard_restaurant_path(@restaurant), class: "dashboard-btn glyphicon glyphicon-stats"  %>
+  <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
 </div>
 <div class="show-item row">
   <div class="col-xs-12 col-md-6">
