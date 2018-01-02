@@ -5,6 +5,9 @@
   <% if flash[:notice] %>
     <div class="notice alert alert-success alert-dismissible col-sm-6  col-md-4 "><%= flash[:notice] %></div>
   <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger alert-dismissible col-sm-6  col-md-4 "><%= flash[:alert] %></div>
+  <% end %>
   <div class="new-btn form-inline pull-right">
     <%= form_for [:admin, @category] do |f| %>
       <% if @category.errors.present? %>
