@@ -26,6 +26,11 @@
   margin-left: 10px;
 }
 
+.dashboard-btn {
+  float: right;
+  margin-top: 20px;
+}
+
 .restaurant-imgbox > .imgbox-inner > img {
   width: 100%;
   height: 100%;
