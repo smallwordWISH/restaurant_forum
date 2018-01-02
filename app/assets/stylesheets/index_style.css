@@ -95,3 +95,9 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
    float: none;
    display: inline-block;
 }
+
+/* feeds */
+
+.nav-tabs {
+  margin-top: 10px;
+}
