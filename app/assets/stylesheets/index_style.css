@@ -109,6 +109,15 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   color: red; 
 }
 
+
+.restaurant-item .caption .heart-btn-empty {
+  float: right;
+  margin: 23px 0 0 5px;
+  text-decoration: none;
+  color: #ADADAD; 
+}
+
+
 .restaurant-discription {
   margin-top: 10px;
   max-height: 40px;
@@ -129,4 +138,50 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 
 .nav-tabs {
   margin-top: 10px;
+}
+
+
+/* ranking */
+
+.rank-restaurant-imgbox {
+  overflow: hidden;
+}
+
+.rank-restaurant-imgbox-inner {
+  width: 100%;
+  padding-top: 75%;
+  position: relative;
+}
+
+.rank-item .rank-restaurant-imgbox img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+.rank-item a {
+  text-decoration: none;
+}
+
+.rank-item .thumb-show {
+  color: #3F5896;
+}
+
+.rank-item .thumb-transt {
+  color: #ADADAD;
+}
+
+.rank-item .heart-btn {
+  color: red;
+}
+
+.rank-item .heart-btn-empty {
+  color: #ADADAD;
 }

@@ -4,10 +4,17 @@
     <div class="notice alert alert-success col-md-6 "><%= flash[:notice] %></div>
   </div>
 <% end %>
+<% if flash[:alert] %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="alert alert-danger col-md-6 "><%= flash[:alert] %></div>
+  </div>
+<% end %>
 <div>
   <ul class="nav nav-tabs">
     <li role="presentation" class="active"><%= link_to "首頁", root_path %></li>
-    <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li>    
+    <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li>
+    <li role="presentation"><%= link_to "Top 10 人氣餐廳", ranking_restaurants_path %></li>       
   </ul>
 </div>
 <div>

@@ -1,7 +1,7 @@
   <% if restaurant.is_liked?(current_user) %>
-    <%= link_to '',unlike_restaurant_path(restaurant), method: :post, class: "thumb-show glyphicon glyphicon-thumbs-up" %>
-    <em class="like-count-show"><%= restaurant.liked_users.uniq.count %></em>
+    <%= link_to '',unlike_restaurant_path(restaurant), method: :post, class: "thumb-show fa fa-thumbs-up" %>
+    <em class="like-count-show"><%= restaurant.likes_count %></em>
   <% else %>
-    <%= link_to '',like_restaurant_path(restaurant), method: :post, class: "thumb-transt glyphicon glyphicon-thumbs-up" %>
-    <em class="like-count-transt"><%= restaurant.liked_users.uniq.count %></em>
+    <%= link_to '',like_restaurant_path(restaurant), method: :post, class: "thumb-transt fa fa-thumbs-o-up" %>
+    <em class="like-count-transt"><%= restaurant.likes_count %></em>
   <% end %>

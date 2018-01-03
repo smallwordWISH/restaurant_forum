@@ -4,7 +4,7 @@ class Admin::RestaurantsController < Admin::BaseController
 
 
   def index
-    @restaurants = Restaurant.page(params[:page]).per(10)
+    @restaurants = Restaurant.order(created_at: :asc).page(params[:page]).per(10)
   end
 
   def new
@@ -34,17 +34,22 @@ class Admin::RestaurantsController < Admin::BaseController
 
   def destroy
     @restaurant.destroy
-    redirect_to_back_or_default
-  end
-
-  def redirect_to_back_or_default
-    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
-      redirect_to request.referer, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
+    if @restaurant.present?
+      flash[:notice] = "#{@restaurant.name} was successfully deleted."
     else
-      redirect_to admin_restaurants_path, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
+      flash[:alert] = "#{@restaurant.name} does not exist."
     end
+    redirect_back(fallback_location: admin_restaurants_path)
   end
 
+
+  # def redirect_to_back_or_default
+  #   if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+  #     redirect_to request.referer, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
+  #   else
+  #     redirect_to admin_restaurants_path, :notice => "#{@restaurant.name} was successfully deleted." if @restaurant.present?
+  #   end
+  # end
 
 
   private

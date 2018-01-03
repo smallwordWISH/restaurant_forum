@@ -1,0 +1,79 @@
+<div>
+  <ul class="nav nav-tabs">
+    <li role="presentation"><%= link_to "首頁", root_path %></li>
+    <li role="presentation"><%= link_to "最新動態", feeds_restaurants_path %></li> 
+    <li role="presentation" class="active"><%= link_to "Top 10 人氣餐廳", ranking_restaurants_path %></li>   
+  </ul>
+</div>
+<br >
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Top 10 收藏數</h3>
+      </div>
+      <div class="panel-body">
+        <% @like_rank_restaurants.each_with_index do |restaurant, index| %>
+          <div class="rank-item">
+            <div class="row">
+              <div class="rank-restaurant-imgbox col-md-6">
+                <div class="rank-restaurant-imgbox-inner">
+                  <%= image_tag restaurant.image, class:"image-responsive center-block"%>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div style="display: inline-block;">  
+                  <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+                </div>
+                <p class="label label-default"><%= restaurant.category.name %></p>
+                <div>
+                  <%= render partial: "shared/like", locals: {restaurant: restaurant} %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if index != 9 %>
+            <hr />
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Top 10 按讚數</h3>
+      </div>
+      <div class="panel-body">
+        <% @favorite_rank_restaurants.each_with_index do |restaurant, index| %>
+          <div class="rank-item">
+            <div class="row">
+              <div class="rank-restaurant-imgbox col-md-6">
+                <div class="rank-restaurant-imgbox-inner">
+                  <%= image_tag restaurant.image, class:"image-responsive center-block"%>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div style="display: inline-block;">                
+                  <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+                </div>
+                <p class="label label-default"><%= restaurant.category.name %></p>
+                <div>
+                  <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
+                  <% if restaurant.is_favorited?(current_user) %>
+                    <em style="color: red"><%= restaurant.favorites_count %></em>
+                  <% else %>
+                    <em style="color: #ADADAD"><%= restaurant.favorites_count %></em>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% if index != 9 %>
+            <hr />
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

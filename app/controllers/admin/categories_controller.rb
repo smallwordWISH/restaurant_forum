@@ -3,7 +3,7 @@ class Admin::CategoriesController < Admin::BaseController
   before_action :set_category , only: [ :update, :destroy ]
 
   def index
-    @categories = Category.all
+    @categories = Category.order(created_at: :asc).all
 
     if params[:id]
       @category = Category.find(params[:id])
@@ -19,7 +19,7 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:notice] = "category was sucessfully created"
       redirect_to admin_categories_path
     else
-      @categories = Category.all
+      @categories = Category.order(created_at: :asc).all
       render :index
     end
   end
@@ -29,7 +29,7 @@ class Admin::CategoriesController < Admin::BaseController
       flash[:notice] = "category was sucessfully updated"
       redirect_to admin_categories_path
     else
-      @categories = Category.all
+      @categories = Category.order(created_at: :asc).all
       render :index
     end
   end

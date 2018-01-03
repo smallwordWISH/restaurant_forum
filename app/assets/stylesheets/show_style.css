@@ -32,6 +32,10 @@
   padding-top: 5px;
 }
 
+.show-header a {
+  text-decoration: none;
+}
+
 .show-header .thumb-show {
   margin: 34px 0 0 10px;
   text-decoration: none;
@@ -64,6 +68,14 @@
   text-decoration: none;
   font-size: 20px;
   color: red; 
+}
+
+.show-header .heart-btn-empty {
+  float: right;
+  margin: 34px 10px 0 0;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ADADAD;
 }
 
 .show-header .dashboard-btn {

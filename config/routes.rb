@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     collection do
       get :feeds
+      get :ranking
     end
 
     member do
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
     end
     
   end
+
 
 
   resources :categories, only: :show

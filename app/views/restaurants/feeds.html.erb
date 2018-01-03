@@ -1,7 +1,8 @@
 <div>
   <ul class="nav nav-tabs">
     <li role="presentation"><%= link_to "首頁", root_path %></li>
-    <li role="presentation" class="active"><%= link_to "最新動態", feeds_restaurants_path %></li>    
+    <li role="presentation" class="active"><%= link_to "最新動態", feeds_restaurants_path %></li>
+    <li role="presentation"><%= link_to "Top 10 人氣餐廳", ranking_restaurants_path %></li>      
   </ul>
 </div>
 <br >
@@ -13,8 +14,8 @@
       </div>
       <div class="panel-body">
         <% @recent_restaurants.each_with_index do |restaurant, index| %>
-          <h4><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
-          <p><%= restaurant.category.name %></p>
+          <h4 style="display: inline-block"><%= link_to restaurant.name, restaurant_path(restaurant) %></h4>
+          <p class="label label-default" style="display: inline-block"><%= restaurant.category.name %></p>
           <p><%= restaurant.description %></p>
           <% if index != 9 %>
             <hr />
@@ -32,7 +33,7 @@
         <% @recent_comments.each_with_index do |comment, index| %>
           <h4><%= link_to comment.restaurant.name, restaurant_path(comment.restaurant) %></h4>
           <p><%= comment.content %></p>
-          <p><%= link_to comment.user.name, user_path(comment.user) %></p>
+          <p>commented by <%= link_to comment.user.name, user_path(comment.user) %></p>
           <% if index != 9 %>
             <hr />
           <% end %>
