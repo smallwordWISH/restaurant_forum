@@ -79,12 +79,34 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   padding: 0 10px;
 }
 
+.restaurant-item .caption a  {
+  color: black;
+  text-decoration: none;
+}
+.restaurant-item .caption h3 {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+
+.restaurant-item .caption .thumb-show {
+  text-decoration: none;
+  color: #3F5896;
+  margin-left: 5px;
+}
+
+.restaurant-item .caption .thumb-transt {
+  text-decoration: none;
+  color: #ADADAD;
+  margin-left: 5px;
+}
+
+
 .restaurant-item .caption .heart-btn {
   float: right;
-  margin-top: 5px;
+  margin: 23px 0 0 5px;
   text-decoration: none;
   color: red; 
-  
 }
 
 .restaurant-discription {

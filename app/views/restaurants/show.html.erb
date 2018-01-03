@@ -1,18 +1,19 @@
 <div class="show-header">
   <h1><%= @restaurant.name %></h1>
   <p class="label label-default"><%= @restaurant.category.name %></p>
-  <%= link_to '', dashboard_restaurant_path(@restaurant), class: "dashboard-btn glyphicon glyphicon-stats"  %>
+  <%= render partial: "shared/like", locals: {restaurant: @restaurant} %>
+  <%= link_to '', dashboard_restaurant_path(@restaurant), class: "dashboard-btn glyphicon glyphicon-stats" %>
   <%= render partial: "shared/favorite", locals: {restaurant: @restaurant} %>
 </div>
 <div class="show-item row">
-  <div class="col-xs-12 col-md-6">
+  <div class="col-md-6">
     <div class="restaurant-imgbox">
       <div class="imgbox-inner">
         <%= image_tag @restaurant.image, width: "100%", class:"image-responsive center-block"%>
       </div>
     </div>
   </div>
-  <div class="col-xs-12 col-md-6">
+  <div class="col-md-6">
     <table id="show-tabel" class="table table-striped">
       <tr>
         <td><%= label_tag 'Tel'%></td>

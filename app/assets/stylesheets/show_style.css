@@ -16,27 +16,60 @@
 
 .show-header {
   margin-left: 10px;
+  margin-bottom: 10px; 
 }
 
-.show-header .label, .show-header h1 {
+.show-header h1 {
+  float: left;
   display: inline-block;
+  margin-bottom: 0px;
 }
 
 .show-header .label {
-  margin-left: 10px;
+  float: left;
+  display: inline-block;
+  margin: 34px 0 10px 7px;
+  padding-top: 5px;
+}
+
+.show-header .thumb-show {
+  margin: 34px 0 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #3F5896; 
+}
+
+.show-header .thumb-transt {
+  margin: 34px 0 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ADADAD; 
+}
+
+.like-count-show {
+  padding-bottom: 3px;
+  color:  #3F5896; 
+  font-size: 16px;
+}
+
+.like-count-transt {
+  padding-bottom: 5px;
+  color: #ADADAD;
+  font-size: 16px; 
 }
 
 .show-header .heart-btn {
   float: right;
-  margin: 30px 10px 0 0;
+  margin: 34px 10px 0 0;
   text-decoration: none;
   font-size: 20px;
   color: red; 
 }
 
-.dashboard-btn {
+.show-header .dashboard-btn {
   float: right;
-  margin: 30px 5px 0 0;
+  margin: 34px 5px 0 0;
+  text-decoration: none;
   font-size: 20px; 
   color: black;
 }

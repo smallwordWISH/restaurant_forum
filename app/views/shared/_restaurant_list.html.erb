@@ -11,10 +11,14 @@
         </div>
         <div class="caption">
           <%= render partial: "shared/favorite", locals: {restaurant: restaurant} %>
-          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>                  
-          <p class="label label-default"><%= restaurant.category.name%></p>   
+          <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+          <%= render partial: "shared/like", locals: {restaurant: restaurant} %>
+          <div style="display: block"> 
+            <p class="label label-default"><%= restaurant.category.name%></p>
+          </div>                              
           <p class="restaurant-discription"><%= truncate(restaurant.description, length: 80) %></p>
         </div>
+        
       </div>
       </div> 
     <% end %>
