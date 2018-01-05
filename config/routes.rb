@@ -19,14 +19,13 @@ Rails.application.routes.draw do
       post :like
       post :unlike
     end
-    
   end
-
-
 
   resources :categories, only: :show
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :index]
+
+  resources :followships, only: [:create, :destroy]
 
   namespace :admin do
     resources :restaurants
