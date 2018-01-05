@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(followers_count: :desc)
+    @users = User.order(followers_count: :desc)
   end
 
 
