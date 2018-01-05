@@ -140,7 +140,7 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   margin-top: 10px;
 }
 
-.panel-body a {
+.panel-body a, .user-item a {
   text-decoration: none;
 }
 
@@ -183,7 +183,7 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   color: #3F5896;
 }
 
-.rank-item .thumb-transt, .rank-item .heart-btn-empty {
+.rank-item .thumb-transt, .rank-item .heart-btn-empty, .user-item .follow-btn-transt, .followers-count-transt {
   color: #ADADAD;
 }
 
@@ -194,3 +194,8 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 .rank-item .thumb-show, .rank-item .thumb-transt, .rank-item .heart-btn, .rank-item .heart-btn-empty, .rank-item em{
   font-size: 20px;
 }
+
+.user-item .follow-btn-show, .user-item .followers-count-show {
+  color: #FFAF0F;
+}
+

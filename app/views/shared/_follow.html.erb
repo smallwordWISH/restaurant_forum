@@ -1,7 +1,7 @@
 <% if user != current_user %>
   <% if current_user.following?(user) %>
-    <%= link_to '', followship_path(user), method: :delete, class: "glyphicon glyphicon-star" %>
+    <%= link_to '', followship_path(user), method: :delete, class: "follow-btn-show glyphicon glyphicon-star" %>
   <% else %>
-    <%= link_to '', followships_path(following_id: user.id), method: :post, class: "glyphicon glyphicon-star-empty"  %>
+    <%= link_to '', followships_path(following_id: user), method: :post, class: "follow-btn-transt glyphicon glyphicon-star-empty"  %>
   <% end %>
 <% end %>

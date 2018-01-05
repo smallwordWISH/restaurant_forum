@@ -24,6 +24,11 @@ class User < ApplicationRecord
   has_many :followers, through: :inverse_followships, source: :user
 
 
+  def count_followers 
+    self.followers_count = self.followers.uniq.size
+    self.save
+  end
+
   def following?(user)
     self.followings.include?(user)
   end
