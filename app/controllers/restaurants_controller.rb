@@ -23,27 +23,27 @@ class RestaurantsController < ApplicationController
 
   def favorite
     Favorite.create(restaurant: @restaurant, user: current_user)
-    @restaurant.count_favorites
+    # @restaurant.count_favorites
     redirect_back(fallback_location: root_path)
   end
 
   def unfavorite
     favorites = Favorite.where(restaurant: @restaurant, user: current_user)
     favorites.destroy_all
-    @restaurant.count_favorites
+    # @restaurant.count_favorites
     redirect_back(fallback_location: root_path)
   end
 
   def like
     Like.create(restaurant: @restaurant, user:current_user)
-    @restaurant.count_likes
+    # @restaurant.count_likes
     redirect_back(fallback_location: root_path)
   end
 
   def unlike
     likes = Like.where(restaurant: @restaurant, user: current_user)
     likes.destroy_all
-    @restaurant.count_likes
+    # @restaurant.count_likes
     redirect_back(fallback_location: root_path)
   end
 

@@ -140,6 +140,9 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   margin-top: 10px;
 }
 
+.panel-body a {
+  text-decoration: none;
+}
 
 /* ranking */
 
@@ -168,13 +171,19 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
 
 .rank-item a {
   text-decoration: none;
+  color: black;
 }
+
+.rank-item .label, .panel-body .label {
+  margin-left: 5px;
+} 
+
 
 .rank-item .thumb-show {
   color: #3F5896;
 }
 
-.rank-item .thumb-transt {
+.rank-item .thumb-transt, .rank-item .heart-btn-empty {
   color: #ADADAD;
 }
 
@@ -182,6 +191,6 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   color: red;
 }
 
-.rank-item .heart-btn-empty {
-  color: #ADADAD;
+.rank-item .thumb-show, .rank-item .thumb-transt, .rank-item .heart-btn, .rank-item .heart-btn-empty, .rank-item em{
+  font-size: 20px;
 }

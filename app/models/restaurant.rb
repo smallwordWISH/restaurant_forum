@@ -19,14 +19,15 @@ class Restaurant < ApplicationRecord
     self.liked_users.include?(user)
   end
 
-  def count_favorites
-    self.favorites_count = self.favorited_users.uniq.size
-    self.save
-  end
+# counter_cache 加入前
+  # def count_favorites
+  #   self.favorites_count = self.favorited_users.uniq.size
+  #   self.save
+  # end
 
-  def count_likes
-    self.likes_count = self.liked_users.uniq.size
-    self.save
-  end
+  # def count_likes
+  #   self.likes_count = self.liked_users.uniq.size
+  #   self.save
+  # end
 
 end
