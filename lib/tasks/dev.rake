@@ -34,7 +34,8 @@ namespace :dev do
         User.create!(
             name: user_name, 
             email: "#{user_name}@email.com",
-            password: "password"
+            password: "password",
+            followers_count: 0
         )
     end
 
