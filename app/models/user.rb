@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates_presence_of :name
+
+  mount_uploader :avatar, AvatarUploader
+
   has_many :comments, dependent: :restrict_with_error
   has_many :restaurants, through: :comments
 
@@ -13,9 +17,10 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_restaurants, through: :likes, source: :restaurant
 
-  validates_presence_of :name
+  has_many :followships
+  has_many :followings, through: :followships, source: :user
 
-  mount_uploader :avatar, AvatarUploader
+  
   
   def admin?
     self.role == "admin"
