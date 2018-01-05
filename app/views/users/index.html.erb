@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+    <div class="col-md-2"></div>
+    <div class="notice alert alert-success col-md-8">
+      <%= flash[:notice] %>  
+    </div>
+<% elsif flash[:alert] %>
+    <div class="col-md-2"></div>
+    <div class="notice alert alert-danger col-md-8">
+      <%= flash[:alert] %>  
+    </div>  
+<% end %>
+<div>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= user.name %>
+        <%= link_to 'follow', followships_path(following_id: user), method: :post %>
+      </li>
+    <% end %>
+  </ul>
+<div>
