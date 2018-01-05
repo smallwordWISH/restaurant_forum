@@ -25,24 +25,101 @@
   </div>
 </div>
 <hr />
-<div class="panel panel-info">
-  <div class="panel-heading">
-    <h4 class="panal-title">已評論餐廳</h4>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h4 class="panal-title"><%= @user.followings.size %> followings</h4>
+      </div>
+      <ul class="list-group">
+        <% @user.followings.each do |user| %>          
+          <li class="list-group-item">
+            <%= link_to user_path(user) do %> 
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="user-item" style="margin-top: 0">
+                    <div class="user-imgbox">
+                      <div class="user-imgbox-inner">
+                        <%= image_tag user.avatar %>
+                      </div>       
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-8"><h4><%= user.name %></h4></div>
+              </div>
+            <% end %>
+          </li>      
+        <% end %>
+      </ul>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panal-title"><%= @user.followers.size %> followers</h4>
+      </div>
+      <ul class="list-group">
+        <% @user.followers.each do |user| %>          
+          <li class="list-group-item">
+            <%= link_to user_path(user) do %> 
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="user-item" style="margin-top: 0">
+                    <div class="user-imgbox">
+                      <div class="user-imgbox-inner">
+                        <%= image_tag user.avatar %>
+                      </div>       
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-8"><h5><%= user.name %></h5></div>
+              </div>
+            <% end %>
+          </li>      
+        <% end %>
+      </ul>
+    </div>
   </div>
-  <div class="panel-body">
-    <%@commented_restaurants.each do |restaurant| %>
-    <%= link_to restaurant_path(restaurant) do %> 
-        <div class="my-restaurant col-xs-6 col-md-2">
-          <div class="my-restaurant-imgbox">
-            <div class="my-restaurant-imgbox-inner">
-              <%=image_tag restaurant.image, class:"image-responsive center-block" %>
+  <div class="col-md-8">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h5 class="panal-title"><%= @commented_restaurants.size %> 已評論餐廳</h4>
+    </div>
+      <div class="panel-body">
+        <% @commented_restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant) do %> 
+            <div class="my-restaurant col-xs-6 col-md-3">
+              <div class="my-restaurant-imgbox">
+                <div class="my-restaurant-imgbox-inner">
+                  <%=image_tag restaurant.image, class:"image-responsive center-block" %>
+                </div>
+                <div class="my-restaurant-name text-center">
+                  <%= restaurant.name %>
+                </div>
+              </div>
             </div>
-            <div class="my-restaurant-name text-center">
-              <%= restaurant.name %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h5 class="panal-title"><%= @user.favorited_resaurants.size %> 已收藏餐廳</h4>
+      </div>
+      <div class="panel-body">
+        <% @user.favorited_resaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant) do %> 
+            <div class="my-restaurant col-xs-6 col-md-3">
+              <div class="my-restaurant-imgbox">
+                <div class="my-restaurant-imgbox-inner">
+                  <%=image_tag restaurant.image, class:"image-responsive center-block" %>
+                </div>
+                <div class="my-restaurant-name text-center">
+                  <%= restaurant.name %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>  
+          <% end %>
+        <% end %>
+      </div>
+    </div>   
+  </div>
 </div>
