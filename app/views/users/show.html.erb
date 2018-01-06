@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
     <div class="col-md-2"></div>
     <div class="notice alert alert-success col-md-8">
-      <%= flash[:notice] %>  
+      <%= flash[:notice] %>
     </div>
 <% elsif flash[:alert] %>
     <div class="col-md-2"></div>
@@ -17,7 +17,21 @@
       </div>
     </div>
     <div class="user-info col-xs-10 col-xs-offset-1 col-md-7 col-md-offset-0">
-      <h3><%= @user.name %></h3>
+      <div class="user-header">
+        <h3 style="display: inline-block;"><%= @user.name %></h3>
+      <% if current_user != @user %>
+        <% if current_user.is_friend?(@user) %>
+          <h4 class="friend-label"><span class="label label-primary label-lg glyphicon glyphicon-ok"> 朋友</span></h4>
+        <% elsif current_user.is_be_applying?(@user) %>
+          <div class="friend-btn"><%= link_to '好友列表確認', friendships_path, class: "btn btn-default btn-sm" %></div>
+        <% elsif current_user.is_applying?(@user) %>
+          <div class="friend-btn"><%= link_to '取消申請好友', friendship_path(@user), method: :delete, class: " btn btn-default btn-sm"%></div>
+        <% else %>
+          <div class="friend-btn"><%= link_to ' 加為好友', friendships_path(friend_id: @user.id), method: :post, class: "btn btn-default glyphicon glyphicon-plus btn-sm"%></div>
+        <% end %>
+      <% end %>
+      <span class="pull-right"><%= render partial: "shared/follow", locals: {user: @user} %></span>
+      </div>
       <div style="margin-bottom: 5px;"><em><%= @user.email %></em></div>
       <ul class="list-unstyled list-inline">
         <li><strong><%= @commented_restaurants.size %></strong> 已評論餐廳</li>            
@@ -41,18 +55,8 @@
         <% @user.followings.each do |user| %>          
           <li class="list-group-item">
             <%= link_to user_path(user) do %> 
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="user-item" style="margin-top: 0">
-                    <div class="user-imgbox">
-                      <div class="user-imgbox-inner">
-                        <%= image_tag user.avatar %>
-                      </div>       
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-8"><h4><%= user.name %></h4></div>
-              </div>
+                <%= image_tag(user.avatar, width: 60, height: 60, class: "img-circle") %>
+                <span class="user-name"><%= user.name %></span>
             <% end %>
           </li>      
         <% end %>
@@ -66,18 +70,8 @@
         <% @user.followers.each do |user| %>          
           <li class="list-group-item">
             <%= link_to user_path(user) do %> 
-              <div class="row">
-                <div class="col-xs-4">
-                  <div class="user-item" style="margin-top: 0">
-                    <div class="user-imgbox">
-                      <div class="user-imgbox-inner">
-                        <%= image_tag user.avatar %>
-                      </div>       
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-8"><h5><%= user.name %></h5></div>
-              </div>
+              <%= image_tag(user.avatar, width: 60, height: 60, class: "img-circle") %>
+              <span class="user-name"><%= user.name %></span>
             <% end %>
           </li>      
         <% end %>

@@ -199,3 +199,19 @@ a.btn.glyphicon> .glyphicon-plus:hover, .glyphicon-pencil:hover, .glyphicon-tras
   color: #FFAF0F;
 }
 
+/* friendship index */
+
+.user-name {
+  font-size: 20px;
+  margin-left: 10px;
+  
+}
+
+.list-group-item a {
+  text-decoration: none;
+}
+
+
+.panel li .btn  {
+  margin: 12px 0 0 5px;
+}

@@ -24,8 +24,12 @@ class User < ApplicationRecord
   has_many :followers, through: :inverse_followships, source: :user
 
   has_many :friendships, dependent: :destroy
-  has_many :friends, through: :friendships
+  has_many :friends, -> { where(friendships: {status: "friend" } )}, through: :friendships
+  has_many :send_applys, -> { where(friendships: {status: "applying" } )}, through: :friendships, source: :friend
 
+  has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id", dependent: :destroy
+  has_many :applyers, -> { where(friendships: {status: "applying" } )}, through: :inverse_friendships, source: :user
+  has_many :applyer_friends, -> { where(friendships: {status: "friend" } )}, through: :inverse_friendships, source: :user
 
   def count_followers 
     self.followers_count = self.followers.uniq.size
@@ -35,8 +39,35 @@ class User < ApplicationRecord
   def following?(user)
     self.followings.include?(user)
   end
+
+  def is_friend?(user)
+    if self.friends.include?(user) or self.applyer_friends.include?(user)  
+        return true
+    else
+        return false
+    end
+  end
+
+
+  def is_be_applying?(user)
+    if self.applyers.include?(user) 
+      return true
+    else
+      return false
+    end
+  end
+
+  def is_applying?(user)
+    if self.send_applys.include?(user) 
+      return true
+    else
+      return false
+    end
+  end
+
   
   def admin?
     self.role == "admin"
   end
+
 end

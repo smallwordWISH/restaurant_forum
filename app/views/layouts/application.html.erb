@@ -26,12 +26,14 @@
         <ul id="menu">
           <li>
             <% if current_user %>
-              <p class="navbar-text" style="color: #C0C0C0; text-align: right">Hi, <%= current_user.email %>&nbsp;&nbsp;</p>
+              <p class="navbar-text" style="color: #C0C0C0; text-align: right">Hi, <%= current_user.name %> !&nbsp;&nbsp;</p>
               <%= link_to '管理者後台', admin_restaurants_path, class: "btn navbar-btn" if current_user.admin?   %>
               <% if user_signed_in? %> 
-                <%= link_to '登出', destroy_user_session_path, class: " btn navbar-btn", method: :delete %>
+                <%= link_to 'Friends', friendships_path, class: "btn navbar-btn" %>
                 <span style="color: #C0C0C0">|</span>
                 <%= link_to 'Profile', user_path(current_user), class: " btn navbar-btn" %>
+                <span style="color: #C0C0C0">|</span>
+                <%= link_to '登出', destroy_user_session_path, class: " btn navbar-btn", method: :delete %>
                 <span style="color: #C0C0C0">|</span>
                 <%= link_to '修改密碼', edit_user_registration_path(current_user), class: "btn navbar-btn pull-right" %>
               <%else%>

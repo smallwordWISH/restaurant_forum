@@ -24,10 +24,10 @@ Rails.application.routes.draw do
   resources :categories, only: :show
 
   resources :users, only: [:show, :edit, :update, :index]
-  
+
   resources :followships, only: [:create, :destroy]
 
-  resources :friendships, only: [:create, :update, :destroy]
+  resources :friendships, only: [:index, :create, :update, :destroy]
 
   namespace :admin do
     resources :restaurants

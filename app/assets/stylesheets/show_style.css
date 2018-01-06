@@ -144,6 +144,10 @@
   background-position: center;
 }
 
+.user-item .user-header .follow-btn-show, .user-item .user-header .follow-btn-transt {
+  font-size: 20px;
+  margin: 25px 5px 0 0;
+}
 
 
 /*user show commented restaurant*/
@@ -177,4 +181,25 @@
 
 .my-restaurant-name {
   margin-top: 2px;
+}
+
+/* friend btn */
+
+.friend-btn, .friend-label {
+  vertical-align: middle;
+  margin: 0 0 10px 10px;
+  display: inline-block;
+}
+
+.friend-btn .btn {
+  border: 1px solid;
+}
+
+.friend-btn a {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.friend-label .label {
+  padding: 5px 10px 8px 10px;
 }

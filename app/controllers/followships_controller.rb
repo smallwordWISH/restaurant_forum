@@ -23,6 +23,6 @@ class FollowshipsController < ApplicationController
     @user.count_followers
     flash[:notice] = "Successfully unfollowed"
 
-    redirect_to users_path
+    redirect_back(fallback_location: users_path) 
   end
 end
