@@ -35,7 +35,7 @@
   <div class="col-md-4">
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h4 class="panal-title"><%= @user.followings.size %> followings</h4>
+        <h5 class="panal-title"><%= @user.followings.size %> followings</h5>
       </div>
       <ul class="list-group">
         <% @user.followings.each do |user| %>          
@@ -60,7 +60,7 @@
     </div>
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h5 class="panal-title"><%= @user.followers.size %> followers</h4>
+        <h5 class="panal-title"><%= @user.followers.size %> followers</h5>
       </div>
       <ul class="list-group">
         <% @user.followers.each do |user| %>          
@@ -87,7 +87,7 @@
   <div class="col-md-8">
   <div class="panel panel-info">
     <div class="panel-heading">
-      <h5 class="panal-title"><%= @commented_restaurants.size %> 已評論餐廳</h4>
+      <h5 class="panal-title"><%= @commented_restaurants.size %> 已評論餐廳</h5>
     </div>
       <div class="panel-body">
         <% @commented_restaurants.each do |restaurant| %>
@@ -108,7 +108,7 @@
     </div>
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h5 class="panal-title"><%= @user.favorited_resaurants.size %> 已收藏餐廳</h4>
+        <h5 class="panal-title"><%= @user.favorited_resaurants.size %> 已收藏餐廳</h5>
       </div>
       <div class="panel-body">
         <% @user.favorited_resaurants.each do |restaurant| %>
