@@ -20,7 +20,7 @@
         <% @applyers.each do |friend| %>          
           <li class="list-group-item">
             <%= link_to user_path(friend) do %> 
-                <%= image_tag(friend.avatar, width: 60, height: 60, class: "img-circle") %>
+                <%= image_tag(friend.avatar, width: 60, height: 60, alt: "avatar", class: "img-circle") %>
                 <span class="user-name"><%= friend.name%></span>
                 <span class="friend-delete-btn">
                    <%= link_to '', friendship_path(friend), method: :delete, data: { confirm: "Are you sure to delete?"}, class: "btn btn-danger glyphicon glyphicon-remove pull-right"%> 
@@ -42,7 +42,7 @@
         <% @friends.each do |friend| %>
           <li class="list-group-item">
           <%= link_to user_path(friend) do %>    
-              <%= image_tag(friend.avatar, width: 60, height: 60, class: "img-circle") %>
+              <%= image_tag(friend.avatar, width: 60, height: 60, alt: "avatar", class: "img-circle") %>
               <span class="user-name"><%= friend.name%></span>
               <span class="friend-delete-btn">
                 <%= link_to '', friendship_path(friend), method: :delete, data: { confirm: "Are you sure to delete?"}, class: "btn btn-danger glyphicon glyphicon-remove pull-right"%>   
