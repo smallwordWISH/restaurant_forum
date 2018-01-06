@@ -55,7 +55,7 @@
         <% @user.followings.each do |user| %>          
           <li class="list-group-item">
             <%= link_to user_path(user) do %> 
-                <%= image_tag(user.avatar, width: 60, height: 60, alt: "avatar", class: "img-circle") %>
+                <%= image_tag(user.avatar, width: 60, height: 60, class: "img-circle") %>
                 <span class="user-name"><%= user.name %></span>
             <% end %>
           </li>      
@@ -70,7 +70,7 @@
         <% @user.followers.each do |user| %>          
           <li class="list-group-item">
             <%= link_to user_path(user) do %> 
-              <%= image_tag(user.avatar, width: 60, height: 60, alt: "avatar", class: "img-circle") %>
+              <%= image_tag(user.avatar, width: 60, height: 60, class: "img-circle") %>
               <span class="user-name"><%= user.name %></span>
             <% end %>
           </li>      
