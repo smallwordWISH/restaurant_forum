@@ -4,9 +4,12 @@
     <li><%= link_to 'Category', admin_categories_path %></li>       
   </ol>
   <% if flash[:notice] %>
-    <div class="notice alert alert-success col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1"><%= flash[:notice] %></div>
+    <div class="notice alert alert-success col-sm-offset-2 col-sm-5  col-md-6 col-lg-offset-1" roll="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+      <%= flash[:notice] %>
+      </div>
   <% end %>
-  <div class="new-btn pull-right col-xs-2 ol-sm-1">
+  <div class="new-btn pull-right col-xs-2 col-sm-1">
     <%= link_to '', new_admin_restaurant_path, class: "btn glyphicon glyphicon-plus" %>
   </div>
 </div>

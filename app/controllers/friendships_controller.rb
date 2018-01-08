@@ -13,9 +13,10 @@ class FriendshipsController < ApplicationController
 
   def update
     @friendship = Friendship.where(friend_id: current_user.id ,user_id: params[:id], status: "applying").first
+    @user = User.find(params[:id])
 
     if @friendship.update(status: "friend")
-      flash[:notice] = "Friend has been successfully added "
+      flash[:notice] = "Successfully added #{@user.name} in friend list"
     else
       flash[:alert] = "Fail to add friend"
     end
@@ -28,7 +29,8 @@ class FriendshipsController < ApplicationController
     if current_user.inverse_friendships.where(user_id: params[:id]).present?
       @friendship = current_user.inverse_friendships.where(user_id: params[:id])
       @friendship.destroy_all
-      flash[:notice] = "Friend has been successfully deleted"
+      @user = User.find(params[:id])
+      flash[:notice] = "Successfully deleted #{@user.name} from friend list"
     elsif current_user.friendships.where(friend_id: params[:id]).present?
       @friendship = current_user.friendships.where(friend_id: params[:id])
       @friendship.destroy_all

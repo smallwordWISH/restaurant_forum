@@ -1,7 +1,10 @@
 <h1><%= @restaurant.name %>'s Dashboard</h1>
 <hr />
+<h4>
 <ul>
-  <li>有<%= @restaurant.comments.count %> 筆評論</li>
-  <li>這家餐廳的平均價位為 $XXX</li>
-  <li>有 XX 人收藏這家餐廳</li>
+  <li>有<span style="color: red"><%= @restaurant.comments.count %></span> 筆評論</li><br />
+  <li>這家餐廳的平均價位為 $XXX</li><br />
+  <li>有<span style="color: red"><%= @restaurant.favorites_count %></span> 人收藏這家餐廳</li><br />
+  <li>收到共<span style="color: red"><%= @restaurant.likes_count %></span> 讚數</li><br />
 </ul>
+</h4>

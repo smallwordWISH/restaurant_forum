@@ -24,12 +24,14 @@ class RestaurantsController < ApplicationController
   def favorite
     Favorite.create(restaurant: @restaurant, user: current_user)
     # @restaurant.count_favorites
+    flash[:notice] = "Successfully kept #{@restaurant.name} in favorite list"
     redirect_back(fallback_location: root_path)
   end
 
   def unfavorite
     favorites = Favorite.where(restaurant: @restaurant, user: current_user)
     favorites.destroy_all
+    flash[:notice] = "Successfully deleted #{@restaurant.name} from favorite list"
     # @restaurant.count_favorites
     redirect_back(fallback_location: root_path)
   end
