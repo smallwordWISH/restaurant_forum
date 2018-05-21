@@ -54,6 +54,10 @@ class RestaurantsController < ApplicationController
      @like_rank_restaurants = Restaurant.order(likes_count: :desc).limit(10) 
   end
 
+  def about
+    @user_count = User.get_user_count
+  end
+
 
   private
 

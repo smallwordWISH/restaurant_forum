@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get :feeds
       get :ranking
+      get :about
     end
 
     member do

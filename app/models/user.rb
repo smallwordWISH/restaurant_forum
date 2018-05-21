@@ -70,4 +70,11 @@ class User < ApplicationRecord
     self.role == "admin"
   end
 
+  def self.get_user_count
+    self.all.size
+  end
+
+  def get_comment_count
+    comments.all.size
+  end
 end
